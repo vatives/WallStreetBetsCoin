@@ -1,4 +1,4 @@
-![BitcoinHekaton Logo](https://github.com/kiyototomioka/WallStreetBetsCoin/blob/master/src/config/wallstreetbets-coin-logo.png)
+![BitcoinHekaton Logo](https://github.com/cryptodeveloperbro/WallStreetBetsCoin/blob/master/src/config/wallstreetbets-coin-logo.png)
 
 
 ### Installing
@@ -213,6 +213,8 @@ Hi TurtleCoin contributor, thanks for forking and sending back Pull Requests. Ex
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
 //Copyright (c)  2019, The BitcoinHekaton Developers
+//Copyright (c)  2021, WallStreetBets Coin
+
 //
 // Please see the included LICENSE file for more information.
 ```
