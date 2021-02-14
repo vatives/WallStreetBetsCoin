@@ -34,12 +34,16 @@ Config parseArguments(int argc, char **argv)
         ("rpc-bind-ip", "Interface IP address for the RPC service",
         cxxopts::value<std::string>(config.rpcBindIp)->default_value("127.0.0.1"));
 
+	options.add_options("no-console")
+        ("no-console", "If set, will not provide an interactive console",
+        cxxopts::value<bool>(config.noConsole)->default_value("false")->implicit_value("true"));
+		
     options.add_options("RPC")
         ("enable-cors", "Adds header 'Access-Control-Allow-Origin' to the RPC responses. Uses the value specified as the domain. Use * for all.",
         cxxopts::value<std::string>(config.corsHeader), "<domain>")
 
         ("r,rpc-password", "Specify the <password> to access the RPC server.", cxxopts::value<std::string>(config.rpcPassword), "<password>");
-
+		
     try
     {
         const auto result = options.parse(argc, argv);
@@ -68,6 +72,11 @@ Config parseArguments(int argc, char **argv)
     {
         std::cout << CryptoNote::getProjectCLIHeader() << std::endl;
         exit(0);
+    }
+	
+	if (config.noConsole)
+    {
+        config.noConsole = true;
     }
 
     return config;
